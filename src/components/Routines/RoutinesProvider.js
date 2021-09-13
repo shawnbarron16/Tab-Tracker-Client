@@ -51,7 +51,7 @@ export const RoutineProvider = (props) => {
             method: "PUT",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`,
-                "Conent-type":"application/json"
+                "Content-type":"application/json"
             },
             body:JSON.stringify(routineObj)
         })
