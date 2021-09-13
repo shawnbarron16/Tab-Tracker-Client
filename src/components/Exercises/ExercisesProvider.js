@@ -6,7 +6,11 @@ export const ExerciseProvider = (props) => {
     const [exercises, setExercises] = useState([])
 
     const getExercises = routineId => {
-        return fetch(`http://localhost:8000/exercises?routine=${routineId}`)
+        return fetch(`http://localhost:8000/exercises?routine=${routineId}`, {
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("tt_token")}`
+            }
+        })
         .then(res => res.json())
         .then(setExercises)
     }
@@ -15,6 +19,7 @@ export const ExerciseProvider = (props) => {
         return fetch(`http://localhost:8000/exercises?routine=${routineId}`,{
             method: "POST",
             headers: {
+                "Authorization": `Token ${localStorage.getItem("tt_token")}`,
                 "Content-type":"application/json"
             },
             body: JSON.stringify(exerciseObj)
@@ -25,6 +30,9 @@ export const ExerciseProvider = (props) => {
     const deleteExercise = (exerciseId, routineId) => {
         return fetch (`http://localhost:8000/exercises/${exerciseId}`, {
             method: "DELETE",
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("tt_token")}`
+            }
         })
         .then(getExercises(routineId))
     }
@@ -33,6 +41,7 @@ export const ExerciseProvider = (props) => {
         return fetch(`http://localhost:8000/exercises/${exerciseObj.id}`, {
             method: "PUT",
             headers: {
+                "Authorization": `Token ${localStorage.getItem("tt_token")}`,
                 "Content-type":"application/json"
             },
             body:JSON.stringify(exerciseObj)
