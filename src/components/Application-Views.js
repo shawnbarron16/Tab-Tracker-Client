@@ -7,7 +7,7 @@ export const ApplicationViews = () => {
     return (
         <>
             <LessonProvider>
-                <Route exact path="/">
+                <Route exact path="/lessons/:lessonId(\d+)">
                     <Lessons />
                 </Route>
             </LessonProvider>
