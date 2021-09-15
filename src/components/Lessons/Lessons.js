@@ -19,13 +19,21 @@ export const Lessons = () => {
   return (
     <section className="lesson-viewer">
       <article className="single-lesson">
-        <div className="single-lesson_info">
+        <div className="single-lesson__info">
+          {lesson.lesson_name}
+        </div>
+        <div className="single-lesson__info">
           <a href={lesson.link} target="_blank" rel="noreferrer">
-            {lesson.lesson_name}
+            View Lesson
           </a>
         </div>
-        <div>{lesson.description}</div>
-        <div>
+        <div className="single-lesson__info">
+          {lesson.description}
+        </div>
+        <div className="single-lesson__info">
+          <button onClick={ () => history.push(`/lesson/lessonforum`)}>
+            Edit
+          </button>
         </div>
       </article>
     </section>
