@@ -15,6 +15,12 @@ export const LessonForum = () => {
         description: "",
     });
 
+    const handleControlledInputChange = (evt) => {
+        const newLesson = {...lesson};
+        newLesson[evt.target.id] = evt.target.value;
+        setLesson(newLesson)
+    }
+
     const handleClickSaveLesson = (evt) => {
         evt.preventDefault();
 
