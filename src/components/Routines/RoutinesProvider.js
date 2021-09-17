@@ -43,7 +43,7 @@ export const RoutineProvider = (props) => {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`
             }
         })
-        .then(res => res.json)
+        .then(res => res.json())
     }
 
     const updateRoutine = routineObj => {

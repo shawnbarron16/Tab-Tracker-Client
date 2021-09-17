@@ -15,7 +15,7 @@ export const Lessons = () => {
   useEffect(() => {
     console.log("Getting Users Lessons...");
     getLessonById(lessonId).then((data) => setLesson(data));
-  }, []);
+  }, [lessonId]);
 
   return (
     <>

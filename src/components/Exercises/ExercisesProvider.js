@@ -12,7 +12,6 @@ export const ExerciseProvider = (props) => {
             }
         })
         .then(res => res.json())
-        .then(setExercises)
     }
 
     const addExercise = (exerciseObj, routineId) => {
