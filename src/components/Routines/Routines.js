@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState} from "react";
 import { RoutineContext } from "./RoutinesProvider";
 import { ExerciseContext } from "../Exercises/ExercisesProvider" 
 import { useHistory, useParams } from "react-router-dom";
+import { RoutineSideBar } from "./RoutineSideBar";
 
 export const Routines = () => {
     const {routineId} = useParams();
@@ -32,11 +33,14 @@ export const Routines = () => {
                             return (
                                 <div className="routine__exercises__exercise">
                                     {exercise.description}
+                                    <button>Edit Exercise</button>
                                 </div>
                             )
                         })}
                     </div>
+                    <button>Edit Routine</button>
             </section>
+            <article>{RoutineSideBar()}</article>
         </>
     )
 }
