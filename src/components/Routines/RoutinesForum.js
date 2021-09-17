@@ -14,6 +14,12 @@ export const RoutineForum = () => {
         description: "",
     });
 
+    const handleControlledInputChange = (evt) => {
+        const newRoutine = {...routine};
+        newRoutine[evt.target.id] = evt.target.value;
+        setRoutine(newRoutine)
+    }
+
     const handleClickSaveRoutine = (evt) => {
         evt.preventDefault();
 
