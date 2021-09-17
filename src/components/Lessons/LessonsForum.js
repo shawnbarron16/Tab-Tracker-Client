@@ -10,7 +10,6 @@ export const LessonForum = () => {
 
     const [lesson, setLesson] = useState({
         id: 0,
-        user: 0,
         lesson_name: "",
         link: "",
         description: "",
@@ -31,16 +30,14 @@ export const LessonForum = () => {
             if (lessonId) {
                 const newLesson = {
                     id: parseInt(lessonId),
-                    user: localStorage.getItem("tt_token"),
                     lesson_name: newLessonLink,
                     link: newLessonLink,
                     description: newLessonDescription,
                 };
-                updateLesson(newLesson).then(() => hisory.push("/lessons/" + newLesson.id));
+                updateLesson(newLesson).then(() => hisory.push("/lessons/" + parseInt(newLesson.id)));
             } else {
                 const newLesson = {
                     id: parseInt(lessonId),
-                    user: localStorage.getItem("tt_token"),
                     lesson_name: newLessonLink,
                     link: newLessonLink,
                     description: newLessonDescription,
