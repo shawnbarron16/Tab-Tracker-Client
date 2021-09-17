@@ -8,11 +8,16 @@ export const ExerciseForum = () => {
     const [isLoading, setIsLoading] = useState([]);
     const { exercisesId, routineId } = useParams();
 
-    const [exercise, serExercise] = useState({
+    const [exercise, setExercise] = useState({
         id: 0, 
         description: "",
     });
-
+    
+    const handleControlledInputChange = (evt) => {
+        const newExercise = {...exercise};
+        newExercise[evt.target.id] = evt.target.value;
+        setExercise(newExercise)
+    }
     const handleClickSaveExercise = (evt) => {
         evt.preventDefault();
 
