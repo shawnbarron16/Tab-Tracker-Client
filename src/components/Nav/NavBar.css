@@ -1,0 +1,28 @@
+.navBar {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    background-color:darkslategrey;
+    height: 2em;
+    margin-top: 0;
+}
+
+.navBar__item {
+    margin-top: 5px;
+    color: white;
+    flex-basis: 20%;
+    font-family: 'Yeseva One', cursive;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    width: 50%;
+    max-height: 12em;
+    margin-left: auto;
+    margin-right: auto;
+}
