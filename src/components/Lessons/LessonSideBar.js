@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { LessonContext } from "./LessonsProvider";
 import { Link } from "react-router-dom";
-import { IoIosMenu, } from "react-icons/io";
 import "./LessonSideBar.css"
 
 
@@ -13,6 +12,8 @@ export const LessonSideBar = () => {
         console.log("Getting lessons...");
         getLessons()
     }, [])
+
+    const showSidebar = () => setSidebar(!sidebar)
 
     return (
         <>
