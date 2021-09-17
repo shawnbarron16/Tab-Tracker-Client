@@ -14,14 +14,9 @@ export const LessonSideBar = () => {
         getLessons()
     }, [])
 
-    const showSidebar = () => setSidebar(!sidebar)
-
     return (
         <>
             <div className="sidebar">
-                <div className="sidebar__icon">
-                    <IoIosMenu onClick={showSidebar} />
-                </div>
                 <div className="sidebar__lessons">
                     {lessons.map((lesson) => {
                         return (
