@@ -1,8 +1,7 @@
 import React, { useContext, useEffect, useState} from "react";
 import { RoutineContext } from "./RoutinesProvider";
 import { ExerciseContext } from "../Exercises/ExercisesProvider" 
-import "./Routines.css";
-import { useHistory, useParams } from "react-router";
+import { useHistory, useParams } from "react-router-dom";
 
 export const Routines = () => {
     const {routineId} = useParams();
@@ -10,13 +9,13 @@ export const Routines = () => {
     const {getExercises} = useContext(ExerciseContext);
     const history = useHistory();
     const [routine, setRoutine] = useState([]);
-    const [exercises, setExercises] = useState([])
+    const [exercises, setExercises] = useState(["Hi"])
 
     useEffect(() => {
         console.log("Getting Routine...Getting Exercises");
         getRoutineById(routineId).then((data) => setRoutine(data));
         getExercises(routineId).then((data) => setExercises(data));
-    }, []);
+    }, [routineId]);
 
     return (
         <>
@@ -29,7 +28,7 @@ export const Routines = () => {
                     </div>
                     <div className="routine__exercises">
                         Exercises:
-                        {exercises.map((exercise) => {
+                        {exercises.map((exercise) => { 
                             return (
                                 <div className="routine__exercises__exercise">
                                     {exercise.description}
