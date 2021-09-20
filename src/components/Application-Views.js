@@ -7,6 +7,7 @@ import { Lessons } from "./Lessons/Lessons";
 import { Routines } from "./Routines/Routines";
 import { NavBar } from "./Nav/Navbar";
 import { FooterBar } from "./Nav/FooterBar";
+import { LessonForum } from "./Lessons/LessonsForum";
 
 export const ApplicationViews = () => {
   return (
@@ -21,6 +22,12 @@ export const ApplicationViews = () => {
               </Route>
               <Route exact path="/routines/:routineId(\d+)">
                 <Routines />
+              </Route>
+              <Route exact path="/lessons/AddALesson">
+                <LessonForum />
+              </Route>
+              <Route exact path="/lessons/EditLesson/:lessonId(\d+)">
+                <LessonForum />
               </Route>
             </LessonProvider>
           </ExerciseProvider>

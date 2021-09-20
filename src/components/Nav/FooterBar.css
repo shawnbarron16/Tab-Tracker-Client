@@ -2,7 +2,7 @@
 .footerBar {
     display: flex;
     flex-flow: column wrap;
-    background-color: darkslategrey;
+    background-color: grey;
     align-items: center;
     width: 100%;
     position: relative;

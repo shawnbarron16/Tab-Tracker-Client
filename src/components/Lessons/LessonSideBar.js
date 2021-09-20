@@ -1,12 +1,13 @@
 import React, { useContext, useState, useEffect } from "react";
 import { LessonContext } from "./LessonsProvider";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./LessonSideBar.css"
 
 
 export const LessonSideBar = () => {
     const { getLessons } = useContext(LessonContext)
     const [lessons, setLessons] = useState([])
+    const history = useHistory()
 
     useEffect(() => {
         console.log("Getting lessons...",);
@@ -16,6 +17,9 @@ export const LessonSideBar = () => {
     return (
         <>
             <div className="sidebar">
+                <button onClick={() => history.push("/lessons/AddALesson")}>
+                    Add A Lesson
+                </button>
                 <div className="sidebar__lessons">
                     <ul>
                     {lessons && lessons.map((lesson) => {
