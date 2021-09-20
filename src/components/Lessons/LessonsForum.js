@@ -8,6 +8,18 @@ export const LessonForum = () => {
     const [isLoading, setIsLoading] = useState(true);
     const { lessonId } = useParams();
 
+    const handleTitle = () => {
+        if(lessonId) {
+          return(
+            <h2>Edit This Lesson</h2>
+          )
+        } else {
+          return (
+            <h2>Create a Lesson</h2>
+          )
+        }
+      }
+
     const [lesson, setLesson] = useState({
         id: 0,
         lesson_name: "",
@@ -52,4 +64,35 @@ export const LessonForum = () => {
             }
         }
     };
+
+    return (
+        <form className="lesson-forum">
+            <section className="lesson-forum__title">
+                {handleTitle()}
+            </section>
+            <section className="lesson-forum__inputs">
+                <fieldset className="inputs__name">
+                    <label className="name__field">
+                        Give the lesson a name
+                    </label>
+                    <input className="name__field" type="text" id="lesson_name" required placeholder="Lesson name" 
+                    value={lesson.lesson_name} onChange={handleControlledInputChange} />
+                </fieldset>
+                <fieldset className="inputs__link">
+                    <label className="link__field">
+                        Lesson URL
+                    </label>
+                    <input className="link__field" type="text" id="link" required placeholder="https://lessonlink.com"
+                    value={lesson.link} onChange={handleControlledInputChange} />
+                </fieldset>
+                <fieldset className="inputs__description">
+                    <label className="description__field">
+                        Add a description for the lesson
+                    </label>
+                    <input className="desription__field" type="text" id="description" required placeholder="This is the lesson description"
+                    value={lesson.description} onChange={handleControlledInputChange} />
+                </fieldset>
+            </section>
+        </form>
+    )
 }
