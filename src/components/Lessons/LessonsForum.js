@@ -3,7 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { LessonContext } from "./LessonsProvider"
 
 export const LessonForum = () => {
-    const { lessons, getLessons, addLesson, updateLesson } = useContext(LessonContext);
+    const { lessons, getLessonById, addLesson, updateLesson } = useContext(LessonContext);
     const hisory = useHistory();
     const [isLoading, setIsLoading] = useState(true);
     const { lessonId } = useParams();
@@ -26,6 +26,11 @@ export const LessonForum = () => {
         link: "",
         description: "",
     });
+    
+    useEffect(() => {
+        if (lessonId)
+          getLessonById(lessonId).then((data) => setLesson(data))
+    }, [])
 
     const handleControlledInputChange = (evt) => {
         const newLesson = {...lesson};
@@ -48,7 +53,7 @@ export const LessonForum = () => {
             if (lessonId) {
                 const newLesson = {
                     id: parseInt(lessonId),
-                    lesson_name: newLessonLink,
+                    lesson_name: newLessonName,
                     link: newLessonLink,
                     description: newLessonDescription,
                 };
@@ -56,7 +61,7 @@ export const LessonForum = () => {
             } else {
                 const newLesson = {
                     id: parseInt(lessonId),
-                    lesson_name: newLessonLink,
+                    lesson_name: newLessonName,
                     link: newLessonLink,
                     description: newLessonDescription,
                 };
@@ -92,6 +97,7 @@ export const LessonForum = () => {
                     <input className="desription__field" type="text" id="description" required placeholder="This is the lesson description"
                     value={lesson.description} onChange={handleControlledInputChange} />
                 </fieldset>
+                <button onClick={handleClickSaveLesson}>Save Lesson</button>
             </section>
         </form>
     )
