@@ -37,7 +37,7 @@ export const ExerciseProvider = (props) => {
     }
 
     const updateExercise = (exerciseObj, routineId) => {
-        return fetch(`http://localhost:8000/exercises/${exerciseObj.id}`, {
+        return fetch(`http://localhost:8000/exercises/${exerciseObj.id}?routine=${routineId}`, {
             method: "PUT",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`,
@@ -48,9 +48,18 @@ export const ExerciseProvider = (props) => {
         .then(getExercises(routineId))
     }
 
+    const getExerciseById = (exerciseId) => {
+        return fetch(`http://localhost:8000/exercises/${exerciseId}`, {
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("tt_token")}`
+            }
+        })
+        .then(res => res.json())
+    }
+
     return (
         <ExerciseContext.Provider value={{
-            exercises, getExercises, addExercise, deleteExercise, updateExercise
+            exercises, getExercises, addExercise, deleteExercise, updateExercise, getExerciseById
         }}>
             {props.children}
         </ExerciseContext.Provider>

@@ -9,6 +9,7 @@ import { NavBar } from "./Nav/Navbar";
 import { FooterBar } from "./Nav/FooterBar";
 import { LessonForum } from "./Lessons/LessonsForum";
 import { RoutineForum } from "./Routines/RoutinesForum";
+import { ExerciseForum } from "./Exercises/ExercisesForum";
 
 export const ApplicationViews = () => {
   return (
@@ -35,6 +36,12 @@ export const ApplicationViews = () => {
               </Route>
               <Route exact path="/EditRoutine/:routineId(\d+)">
                 <RoutineForum />
+              </Route>
+              <Route exact path="/AddAnExercise/:routineId(\d+)">
+                <ExerciseForum />
+              </Route>
+              <Route exact path="/EditExercise/:exerciseId(\d+)/:routineId(\d+)">
+                <ExerciseForum />
               </Route>
             </LessonProvider>
           </ExerciseProvider>
