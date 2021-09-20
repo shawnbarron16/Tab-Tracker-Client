@@ -35,7 +35,7 @@ export const Lessons = () => {
           </div>
         </article>
       </section>
-      <article>{LessonSideBar()}</article>
+      <article><LessonSideBar /></article>
     </>
   );
 };

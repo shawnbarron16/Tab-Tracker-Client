@@ -5,29 +5,29 @@ import "./LessonSideBar.css"
 
 
 export const LessonSideBar = () => {
-    const [sidebar, setSidebar] = useState(false)
-    const { lessons, getLessons } = useContext(LessonContext)
+    const { getLessons } = useContext(LessonContext)
+    const [lessons, setLessons] = useState([])
 
     useEffect(() => {
-        console.log("Getting lessons...");
-        getLessons()
+        console.log("Getting lessons...",);
+        getLessons().then((data) => setLessons(data))
     }, [])
-
-    const showSidebar = () => setSidebar(!sidebar)
 
     return (
         <>
             <div className="sidebar">
                 <div className="sidebar__lessons">
-                    {lessons.map((lesson) => {
+                    <ul>
+                    {lessons && lessons.map((lesson) => {
                         return (
-                            <ul className="sidebar__lesson-link">
-                                <Link to={"/lessons/" + lesson.id}>
+                            <div className="sidebar__lesson-link">
+                                <Link to={"/lessons/" + lesson.id} key={lesson.id}>
                                     {lesson.lesson_name}
                                 </Link>
-                            </ul>
+                            </div>
                         )
                     })}
+                    </ul>
                 </div>
             </div>
         </>

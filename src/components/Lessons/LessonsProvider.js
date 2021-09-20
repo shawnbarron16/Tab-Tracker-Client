@@ -4,6 +4,7 @@ export const LessonContext = createContext()
 
 export const LessonProvider = (props) => {
     const [lessons, setLessons] = useState([])
+    const [lesson, setLesson] = useState([])
 
     const getLessons = () => {
         return fetch("http://localhost:8000/lessons", {
@@ -12,7 +13,6 @@ export const LessonProvider = (props) => {
             }
         })
         .then(res => res.json())
-        .then(setLessons)
     } 
 
     const addLesson =  lessonObj => {
@@ -60,7 +60,7 @@ export const LessonProvider = (props) => {
     }
     return (
         <LessonContext.Provider value = {{
-            lessons, getLessons, getLessonById, addLesson, deleteLesson, updateLesson
+            lessons, lesson, getLessons, getLessonById, addLesson, deleteLesson, updateLesson
         }}>
             {props.children}
         </LessonContext.Provider>
