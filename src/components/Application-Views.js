@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { Route } from "react-router-dom";
+import { Route, useHistory } from "react-router-dom";
 import { LessonProvider } from "./Lessons/LessonsProvider";
 import { RoutineProvider } from "./Routines/RoutinesProvider";
 import { ExerciseProvider } from "./Exercises/ExercisesProvider";
@@ -14,6 +14,8 @@ import { LessonSideBar } from "./Lessons/LessonSideBar";
 import { RoutineSideBar } from "./Routines/RoutineSideBar";
 
 export const ApplicationViews = () => {
+  const history = useHistory();
+
   return (
     <>
       <NavBar />
@@ -51,6 +53,12 @@ export const ApplicationViews = () => {
               <Route exact path="/routines">
                 <RoutineSideBar />
               </Route>
+              <div className="landing-link" onClick={() => history.push("/routines")}>
+                View Your Routines
+              </div>
+              <div className="landing-link" onClick={() => history.push("/lessons")}>
+                View Your Lessons
+              </div>
             </LessonProvider>
           </ExerciseProvider>
         </RoutineProvider>
