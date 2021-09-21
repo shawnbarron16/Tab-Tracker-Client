@@ -3,7 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { LessonContext } from "./LessonsProvider"
 
 export const LessonForum = () => {
-    const { lessons, getLessonById, addLesson, updateLesson } = useContext(LessonContext);
+    const { lessons, getLessonById, addLesson, updateLesson, deleteLesson } = useContext(LessonContext);
     const hisory = useHistory();
     const [isLoading, setIsLoading] = useState(true);
     const { lessonId } = useParams();
@@ -70,7 +70,14 @@ export const LessonForum = () => {
         }
     };
 
+    const handleClickDeleteLesson = (evt) => {
+        evt.preventDefault();
+        deleteLesson(lessonId);
+        hisory.push(`/lessons`)
+    }
+
     return (
+        <>
         <form className="lesson-forum">
             <section className="lesson-forum__title">
                 {handleTitle()}
@@ -100,5 +107,7 @@ export const LessonForum = () => {
                 <button onClick={handleClickSaveLesson}>Save Lesson</button>
             </section>
         </form>
+        <button onClick={handleClickDeleteLesson}>Delete Lesson</button>
+        </>
     )
 }

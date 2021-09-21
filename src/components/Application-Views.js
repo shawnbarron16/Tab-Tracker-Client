@@ -10,6 +10,8 @@ import { FooterBar } from "./Nav/FooterBar";
 import { LessonForum } from "./Lessons/LessonsForum";
 import { RoutineForum } from "./Routines/RoutinesForum";
 import { ExerciseForum } from "./Exercises/ExercisesForum";
+import { LessonSideBar } from "./Lessons/LessonSideBar";
+import { RoutineSideBar } from "./Routines/RoutineSideBar";
 
 export const ApplicationViews = () => {
   return (
@@ -42,6 +44,12 @@ export const ApplicationViews = () => {
               </Route>
               <Route exact path="/EditExercise/:exerciseId(\d+)/:routineId(\d+)">
                 <ExerciseForum />
+              </Route>
+              <Route exact path="/lessons">
+                <LessonSideBar />
+              </Route>
+              <Route exact path="/routines">
+                <RoutineSideBar />
               </Route>
             </LessonProvider>
           </ExerciseProvider>
