@@ -3,7 +3,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { RoutineContext } from "./RoutinesProvider"
 
 export const RoutineForum = () => {
-    const { routines, getRoutineById, addRoutine, updateRoutine } = useContext(RoutineContext);
+    const { routines, getRoutineById, addRoutine, updateRoutine, deleteRoutine } = useContext(RoutineContext);
     const history = useHistory();
     const [isLoading, setIsLoading] = useState([]);
     const { routineId } = useParams();
@@ -64,7 +64,14 @@ export const RoutineForum = () => {
         }
     };
 
+    const handleCLickDeleteRoutine = (evt) => {
+        evt.preventDefault();
+        deleteRoutine(routineId);
+        history.push(`/routines`)
+    }
+
     return (
+        <>
         <form className="routine-forum">
             <section className="routine-forum__title">
                 {handleTitle()}
@@ -87,5 +94,7 @@ export const RoutineForum = () => {
                 <button onClick={handleClickSaveRoutine}>Save Routine</button>
             </section>
         </form>
+        <button onClick={handleCLickDeleteRoutine}>Delete Routine</button>
+        </>
     )
 }

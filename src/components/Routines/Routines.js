@@ -38,7 +38,7 @@ export const Routines = () => {
                             )
                         })}
                     </div>
-                    <button onClick={() => history.push(`/EditRoutine/${routine.id}`)}>Edit Routine</button>
+                    <button onClick={() => history.push(`/EditRoutine/${routine.id}`)}>Edit/Delete Routine</button>
             </section>
             <div>
                 <button onClick={() => history.push("/AddAnExercise/" + parseInt(routineId))}>Add an Exercise</button>
