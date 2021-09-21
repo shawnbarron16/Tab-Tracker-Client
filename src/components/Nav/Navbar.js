@@ -9,7 +9,7 @@ export const NavBar = () => {
                 <ul className="navbar-item" style={{left: "4em"}}>
                     <Link className="navBar__link" to="/">Home</Link>
                 </ul>
-                <ul className="navbar-item" style={{left: "15em"}}>
+                <ul className="navbar-item" style={{left: "16em"}}>
                     <Link className="navBar__link" to="/lessons">Lessons</Link>
                 </ul>
                 <ul className="navbar-item" style={{left: "18em"}}>
