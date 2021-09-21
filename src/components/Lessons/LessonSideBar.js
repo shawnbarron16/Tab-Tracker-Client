@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { LessonContext } from "./LessonsProvider";
 import { Link, useHistory } from "react-router-dom";
-import "./LessonSideBar.css"
 
 
 export const LessonSideBar = () => {

@@ -1,13 +1,13 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Reenie Beanie', cursive;
+  color: rgb(36, 36, 36);
+  font-size: 2.5em;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar {
+  background-image: url("https://yourguitarbrain.com/wp-content/uploads/2020/08/Tablature-Example_Hammer-on_Pull-off_300DPI_PNG.png");
+}
+
+a {
+  color: rgb(36, 36, 36);
 }
