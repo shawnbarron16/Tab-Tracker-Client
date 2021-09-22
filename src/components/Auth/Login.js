@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import "../../index.css"
 
 
 export const Login = props => {
@@ -41,25 +42,25 @@ export const Login = props => {
             </dialog>
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Tab Tracker</h1>
-                    <h2>Please sign in</h2>
-                    <fieldset>
+                    <h1 style={{textAlign: "center"}}>Tab Tracker</h1>
+                    <h2 style={{textAlign: "center"}}>Please sign in</h2>
+                    <fieldset style={{textAlign: "center"}} className="field">
                         <label htmlFor="inputEmail"> Email address </label>
                         <input ref={email} type="email" id="email" className="form-control"  placeholder="Email address" required autoFocus />
                     </fieldset>
-                    <fieldset>
+                    <fieldset style={{textAlign: "center"}}>
                         <label htmlFor="inputPassword"> Password </label>
                         <input ref={password} type="password" id="password" className="form-control"  placeholder="Password" required />
                     </fieldset>
                     <fieldset style={{
                         textAlign:"center"
                     }}>
-                        <button className="btn btn-1 btn-sep icon-send" type="submit">Sign In</button>
+                        <button style={{marginTop: "50px"}} className="button" type="submit">Sign In</button>
                     </fieldset>
                 </form>
             </section>
-            <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
+            <section className="link--register" style={{textAlign: "center", marginTop: "100px"}}>
+                <Link to="/register">Not a member yet? <br /> Click Here To Sign Up!</Link>
             </section>
         </main>
     )

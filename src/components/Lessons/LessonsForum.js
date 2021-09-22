@@ -95,7 +95,7 @@ export const LessonForum = () => {
                     <label className="name__field">
                         Give the lesson a name
                     </label>
-                    <input className="name__field" type="text" id="lesson_name" required placeholder="Lesson name" 
+                    <input className="name__field" type="text" id="lesson_name" required autoFocus placeholder="Lesson name" 
                     value={lesson.lesson_name} onChange={handleControlledInputChange} />
                 </fieldset>
                 <fieldset className="inputs__link">
