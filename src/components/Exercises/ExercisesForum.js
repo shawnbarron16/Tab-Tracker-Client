@@ -20,6 +20,14 @@ export const ExerciseForum = () => {
         }
       }
 
+      const handleIfDelete = () => {
+          if(exerciseId) {
+              return(
+                <button className="button" onClick={handleClickDeleteExercise}>Delete Exercise</button>
+              )
+          }
+      }
+
     const [exercise, setExercise] = useState({
         id: 0, 
         description: "",
@@ -78,11 +86,11 @@ export const ExerciseForum = () => {
                     <input className="desription__field" type="text" id="description" required placeholder="This is the routine description"
                     value={exercise.description} onChange={handleControlledInputChange} />
                 </fieldset>
-                <button onClick={handleClickSaveExercise}>Save Exercise</button>
+                <button className="button" onClick={handleClickSaveExercise}>Save Exercise</button>
             </section>
         </form>
         <section>
-            <button onClick={handleClickDeleteExercise}>Delete This Exercise</button>
+            {handleIfDelete()}
         </section>
         </>
     )

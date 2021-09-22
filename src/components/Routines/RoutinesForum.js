@@ -103,7 +103,7 @@ export const RoutineForum = () => {
             </section>
         </form>
         <div>
-            {handleIfDelete}
+            {handleIfDelete()}
         </div>
         </>
     )
