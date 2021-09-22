@@ -28,7 +28,7 @@ export const Lessons = () => {
           </div>
           <div className="single-lesson__info">{lesson.description}</div>
           <div className="single-lesson__info">
-            <button onClick={() => history.push(`EditLesson/${lessonId}`)}>
+            <button className="button" onClick={() => history.push(`EditLesson/${lessonId}`)}>
               Edit/Delete Lesson
             </button>
           </div>

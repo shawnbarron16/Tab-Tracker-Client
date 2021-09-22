@@ -16,7 +16,7 @@ export const LessonSideBar = () => {
     return (
         <>
             <div className="sidebar">
-                <button onClick={() => history.push("/lessons/AddALesson")}>
+                <button className="button" onClick={() => history.push("/lessons/AddALesson")}>
                     Add A Lesson
                 </button>
                 <div className="sidebar__lessons">

@@ -15,7 +15,7 @@ export const RoutineSideBar = () => {
     return (
         <>
             <div className="sidebar">
-            <button onClick={() => history.push("/AddARoutine")}>
+            <button className="button" onClick={() => history.push("/AddARoutine")}>
                     Add A Routine
                 </button>
                 <div className="sidebar__routines">

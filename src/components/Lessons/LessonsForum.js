@@ -18,6 +18,14 @@ export const LessonForum = () => {
             <h2>Create a Lesson</h2>
           )
         }
+      };
+      
+      const handleIfDelete = () => {
+          if(lessonId) {
+              return(
+                  <button className="button" onClick={handleClickDeleteLesson}>Delete Lesson</button>
+              )
+          }
       }
 
     const [lesson, setLesson] = useState({
@@ -104,10 +112,12 @@ export const LessonForum = () => {
                     <input className="desription__field" type="text" id="description" required placeholder="This is the lesson description"
                     value={lesson.description} onChange={handleControlledInputChange} />
                 </fieldset>
-                <button onClick={handleClickSaveLesson}>Save Lesson</button>
+                <button className="button" onClick={handleClickSaveLesson}>Save Lesson</button>
             </section>
         </form>
-        <button onClick={handleClickDeleteLesson}>Delete Lesson</button>
+        <div>
+            {handleIfDelete}
+        </div>
         </>
     )
 }

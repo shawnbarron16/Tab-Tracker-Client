@@ -20,6 +20,14 @@ export const RoutineForum = () => {
         }
       }
 
+    const handleIfDelete = () => {
+        if(routineId) {
+            return(
+                <button className="button" onClick={handleCLickDeleteRoutine}>Delete Routine</button>
+            )
+        }
+    }
+
 
     const [routine, setRoutine] = useState({
         id: 0,
@@ -73,7 +81,7 @@ export const RoutineForum = () => {
     return (
         <>
         <form className="routine-forum">
-            <section className="routine-forum__title">
+            <section style={{textAlign: "center", marginTop: "20px", marginBottom: "50px"}} className="routine-forum__title">
                 {handleTitle()}
             </section>
             <section className="routine-forum__inputs">
@@ -91,10 +99,12 @@ export const RoutineForum = () => {
                     <input className="desription__field" type="text" id="description" required placeholder="This is the routine description"
                     value={routine.description} onChange={handleControlledInputChange} />
                 </fieldset>
-                <button onClick={handleClickSaveRoutine}>Save Routine</button>
+                <button className="button" onClick={handleClickSaveRoutine}>Save Routine</button>
             </section>
         </form>
-        <button onClick={handleCLickDeleteRoutine}>Delete Routine</button>
+        <div>
+            {handleIfDelete}
+        </div>
         </>
     )
 }

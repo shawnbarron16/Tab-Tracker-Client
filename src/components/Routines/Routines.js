@@ -33,15 +33,15 @@ export const Routines = () => {
                             return (
                                 <div className="routine__exercises__exercise">
                                     {exercise.description}
-                                    <button onClick={() => history.push(`/EditExercise/${exercise.id}/${routineId}`)}>Edit Exercise</button>
+                                    <button className="button" onClick={() => history.push(`/EditExercise/${exercise.id}/${routineId}`)}>Edit Exercise</button>
                                 </div>
                             )
                         })}
                     </div>
-                    <button onClick={() => history.push(`/EditRoutine/${routine.id}`)}>Edit/Delete Routine</button>
+                    <button className="button" onClick={() => history.push(`/EditRoutine/${routine.id}`)}>Edit/Delete Routine</button>
             </section>
             <div>
-                <button onClick={() => history.push("/AddAnExercise/" + parseInt(routineId))}>Add an Exercise</button>
+                <button className="button" onClick={() => history.push("/AddAnExercise/" + parseInt(routineId))}>Add an Exercise</button>
             </div>
             <article>{RoutineSideBar()}</article>
         </>
