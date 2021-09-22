@@ -86,7 +86,7 @@ export const RoutineForum = () => {
             </section>
             <section className="routine-forum__inputs">
                 <fieldset className="inputs__name">
-                    <label className="name__field">
+                    <label style={{textAlign: "center"}} className="name__field">
                         Give the routine a name
                     </label>
                     <input className="name__field" type="text" id="routine_name" required placeholder="routine name" 
