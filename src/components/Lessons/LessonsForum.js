@@ -87,7 +87,7 @@ export const LessonForum = () => {
     return (
         <>
         <form className="lesson-forum">
-            <section className="lesson-forum__title">
+            <section style={{textAlign: "center", marginTop: "20px", marginBottom: "50px"}} className="lesson-forum__title">
                 {handleTitle()}
             </section>
             <section className="lesson-forum__inputs">
