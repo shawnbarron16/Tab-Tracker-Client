@@ -6,12 +6,15 @@ export const HomeScreen = () => {
 
     return (
         <>
-            <div onClick={() => history.push("/lessons")}>
+        <h1 style={{textAlign: "center", marginTop: "20px"}}>WELCOME TO TAB TRACKER</h1>
+        <div className="columns">
+            <div className="column is-2" style={{margin: "50px", marginLeft: "550px", marginTop: "210px"}} onClick={() => history.push("/lessons")}>
                 View Your Lessons
             </div>
-            <div onClick={() => history.push("/routines")}>
+            <div className="columns is-4" style={{margin: "50px", marginTop: "220px", marginBottom: "360px"}} onClick={() => history.push("/routines")}>
                 View Your Routines
             </div>
+        </div>
         </>
     )
 }
