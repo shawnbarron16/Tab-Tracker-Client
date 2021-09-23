@@ -96,21 +96,21 @@ export const LessonForum = () => {
                         Give the lesson a name
                     </label>
                     <input className="name__field" type="text" id="lesson_name" required autoFocus placeholder="Lesson name" 
-                    value={lesson.lesson_name} onChange={handleControlledInputChange} />
+                    value={lesson.lesson_name} onChange={handleControlledInputChange} style={{border: "1px solid", borderRadius: "7px", boxShadow: "0 0 5px ", width: "200px"}}/>
                 </fieldset>
                 <fieldset className="inputs__link">
                     <label className="link__field">
                         Lesson URL
                     </label>
                     <input className="link__field" type="text" id="link" required placeholder="https://lessonlink.com"
-                    value={lesson.link} onChange={handleControlledInputChange} />
+                    value={lesson.link} onChange={handleControlledInputChange} style={{border: "1px solid", borderRadius: "7px", boxShadow: "0 0 5px ", width: "200px"}}/>
                 </fieldset>
                 <fieldset className="inputs__description">
                     <label className="description__field">
                         Add a description for the lesson
                     </label>
                     <input className="desription__field" type="text" id="description" required placeholder="This is the lesson description"
-                    value={lesson.description} onChange={handleControlledInputChange} />
+                    value={lesson.description} onChange={handleControlledInputChange} style={{border: "1px solid", borderRadius: "7px", boxShadow: "0 0 5px ", width: "200px"}}/>
                 </fieldset>
                 <button className="button" onClick={handleClickSaveLesson}>Save Lesson</button>
             </section>

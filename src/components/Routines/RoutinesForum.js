@@ -91,14 +91,14 @@ export const RoutineForum = () => {
                         Give the routine a name
                     </label>
                     <input className="name__field" type="text" id="routine_name" required placeholder="routine name" 
-                    value={routine.routine_name} onChange={handleControlledInputChange} />
+                    value={routine.routine_name} onChange={handleControlledInputChange} style={{border: "1px solid", borderRadius: "7px", boxShadow: "0 0 5px ", width: "200px"}}/>
                 </fieldset>
                 <fieldset className="inputs__description">
                     <label className="description__field">
                         Add a description for the routine
                     </label>
                     <input className="desription__field" type="text" id="description" required placeholder="This is the routine description"
-                    value={routine.description} onChange={handleControlledInputChange} />
+                    value={routine.description} onChange={handleControlledInputChange} style={{border: "1px solid", borderRadius: "7px", boxShadow: "0 0 5px ", width: "200px"}}/>
                 </fieldset>
                 <button className="button" onClick={handleClickSaveRoutine}>Save Routine</button>
             </section>
