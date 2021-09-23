@@ -46,11 +46,13 @@ export const Login = props => {
                     <h2 style={{textAlign: "center"}}>Please sign in</h2>
                     <fieldset style={{textAlign: "center"}} className="field">
                         <label htmlFor="inputEmail"> Email address </label>
-                        <input ref={email} type="email" id="email" className="form-control"  placeholder="Email address" required autoFocus />
+                        <input ref={email} type="email" id="email" className="form-control"  placeholder="Email address" required autoFocus 
+                        style={{border: "1px solid", borderRadius: "7px", boxShadow: "0 0 5px ", width: "200px"}}/>
                     </fieldset>
                     <fieldset style={{textAlign: "center"}}>
                         <label htmlFor="inputPassword"> Password </label>
-                        <input ref={password} type="password" id="password" className="form-control"  placeholder="Password" required />
+                        <input ref={password} type="password" id="password" className="form-control"  placeholder="Password" required 
+                        style={{border: "1px solid", borderRadius: "7px", boxShadow: "0 0 5px ", width: "200px"}}/>
                     </fieldset>
                     <fieldset style={{
                         textAlign:"center"

@@ -53,23 +53,23 @@ export const Register = (props) => {
                 <h1 className="h3 mb-3 font-weight-normal">Register an account</h1>
                 <fieldset>
                     <label htmlFor="firstName"> First Name </label>
-                    <input ref={firstName} type="text" name="firstName" className="form-control" placeholder="First name" required autoFocus />
+                    <input ref={firstName} type="text" name="firstName" className="form-control" placeholder="First name" required autoFocus style={{border: "1px solid", borderRadius: "7px", boxShadow: "0 0 5px ", width: "200px"}}/>
                 </fieldset>
                 <fieldset>
                     <label htmlFor="lastName"> Last Name </label>
-                    <input ref={lastName} type="text" name="lastName" className="form-control" placeholder="Last name" required />
+                    <input ref={lastName} type="text" name="lastName" className="form-control" placeholder="Last name" required style={{border: "1px solid", borderRadius: "7px", boxShadow: "0 0 5px ", width: "200px"}}/>
                 </fieldset>
                 <fieldset>
                     <label htmlFor="inputEmail"> Email address </label>
-                    <input ref={email} type="email" name="email" className="form-control" placeholder="Email address" required />
+                    <input ref={email} type="email" name="email" className="form-control" placeholder="Email address" required style={{border: "1px solid", borderRadius: "7px", boxShadow: "0 0 5px ", width: "200px"}}/>
                 </fieldset>
                 <fieldset>
                     <label htmlFor="inputPassword"> Password </label>
-                    <input ref={password} type="password" name="password" className="form-control" placeholder="Password" required />
+                    <input ref={password} type="password" name="password" className="form-control" placeholder="Password" required style={{border: "1px solid", borderRadius: "7px", boxShadow: "0 0 5px ", width: "200px"}}/>
                 </fieldset>
                 <fieldset>
                     <label htmlFor="verifyPassword"> Verify Password </label>
-                    <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Verify password" required />
+                    <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Verify password" required style={{border: "1px solid", borderRadius: "7px", boxShadow: "0 0 5px ", width: "200px"}}/>
                 </fieldset>
                 <fieldset style={{
                     textAlign: "center"
