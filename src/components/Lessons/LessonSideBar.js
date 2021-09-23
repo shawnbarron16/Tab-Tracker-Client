@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { LessonContext } from "./LessonsProvider";
 import { Link, useHistory } from "react-router-dom";
-import "./LessonSideBar.css"
 
 
 export const LessonSideBar = () => {
@@ -16,8 +15,9 @@ export const LessonSideBar = () => {
 
     return (
         <>
-            <div className="sidebar">
-                <button onClick={() => history.push("/lessons/AddALesson")}>
+            <div className="sidebar" style={{marginLeft: "15px"}}>
+            <h1 style={{fontSize: 50, marginBottom: "20px", textDecoration: "underline"}}>Your Lessons</h1>
+                <button className="button" onClick={() => history.push("/lessons/AddALesson")}>
                     Add A Lesson
                 </button>
                 <div className="sidebar__lessons">

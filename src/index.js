@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import { TabTracker } from './components/Tab-Tracker';
 import { BrowserRouter as Router } from "react-router-dom"
+import "./index.css"
 
 ReactDOM.render(
   <React.StrictMode>

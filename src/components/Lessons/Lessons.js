@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { LessonContext } from "./LessonsProvider";
-import "./Lessons.css";
 import { useHistory, useParams } from "react-router-dom";
 import { LessonSideBar } from "./LessonSideBar";
 
@@ -19,23 +18,29 @@ export const Lessons = () => {
 
   return (
     <>
-      <section className="lesson-viewer">
+    <div className="columns">
+      <div className="column is-one-fifth">
+      <article>{LessonSideBar()}</article>
+      </div>
+      <div className="column">
+      <section className="lesson-viewer" style={{ marginLeft: "400px" }}>
         <article className="single-lesson">
-          <div className="single-lesson__info">{lesson.lesson_name}</div>
+          <div className="single-lesson__info" style={{marginBottom: "50px"}}>{lesson.lesson_name}</div>
           <div className="single-lesson__info">
-            <a href={lesson.link} target="_blank" rel="noreferrer">
-              View Lesson
+            <a href={lesson.link} target="_blank" rel="noreferrer" style={{marginBottom: "50px"}}>
+              Click Here To View Lesson
             </a>
           </div>
-          <div className="single-lesson__info">{lesson.description}</div>
+          <div className="single-lesson__info" style={{marginTop: "50px", marginBottom: "25px"}}>{lesson.description}</div>
           <div className="single-lesson__info">
-            <button onClick={() => history.push(`EditLesson/${lessonId}`)}>
+            <button className="button" onClick={() => history.push(`EditLesson/${lessonId}`)}>
               Edit/Delete Lesson
             </button>
           </div>
         </article>
       </section>
-      <article><LessonSideBar /></article>
+      </div>
+      </div>
     </>
   );
 };

@@ -12,6 +12,7 @@ import { RoutineForum } from "./Routines/RoutinesForum";
 import { ExerciseForum } from "./Exercises/ExercisesForum";
 import { LessonSideBar } from "./Lessons/LessonSideBar";
 import { RoutineSideBar } from "./Routines/RoutineSideBar";
+import { HomeScreen } from "./HomeScreen";
 
 export const ApplicationViews = () => {
   const history = useHistory();
@@ -23,6 +24,9 @@ export const ApplicationViews = () => {
         <RoutineProvider>
           <ExerciseProvider>
             <LessonProvider>
+              <Route exact path="/">
+                <HomeScreen />
+              </Route>
               <Route exact path="/lessons/:lessonId(\d+)">
                 <Lessons />
               </Route>
@@ -53,12 +57,6 @@ export const ApplicationViews = () => {
               <Route exact path="/routines">
                 <RoutineSideBar />
               </Route>
-              <div className="landing-link" onClick={() => history.push("/routines")}>
-                View Your Routines
-              </div>
-              <div className="landing-link" onClick={() => history.push("/lessons")}>
-                View Your Lessons
-              </div>
             </LessonProvider>
           </ExerciseProvider>
         </RoutineProvider>

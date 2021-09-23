@@ -18,6 +18,14 @@ export const LessonForum = () => {
             <h2>Create a Lesson</h2>
           )
         }
+      };
+      
+      const handleIfDelete = () => {
+          if(lessonId) {
+              return(
+                  <button className="button" onClick={handleClickDeleteLesson}>Delete Lesson</button>
+              )
+          }
       }
 
     const [lesson, setLesson] = useState({
@@ -57,7 +65,7 @@ export const LessonForum = () => {
                     link: newLessonLink,
                     description: newLessonDescription,
                 };
-                updateLesson(newLesson).then(() => hisory.push("/lessons/" + parseInt(newLesson.id)));
+                updateLesson(newLesson).then(() => hisory.push("/lessons/" + parseInt(lessonId)));
             } else {
                 const newLesson = {
                     id: parseInt(lessonId),
@@ -65,7 +73,7 @@ export const LessonForum = () => {
                     link: newLessonLink,
                     description: newLessonDescription,
                 };
-                addLesson(newLesson).then(() => hisory.push("/lessons/" + newLesson.id));
+                addLesson(newLesson).then(() => hisory.push("/lessons/"));
             }
         }
     };
@@ -78,8 +86,8 @@ export const LessonForum = () => {
 
     return (
         <>
-        <form className="lesson-forum">
-            <section className="lesson-forum__title">
+        <form className="lesson-forum" style={{textAlign: "center"}}>
+            <section style={{textAlign: "center", marginTop: "20px", marginBottom: "50px"}} className="lesson-forum__title">
                 {handleTitle()}
             </section>
             <section className="lesson-forum__inputs">
@@ -87,7 +95,7 @@ export const LessonForum = () => {
                     <label className="name__field">
                         Give the lesson a name
                     </label>
-                    <input className="name__field" type="text" id="lesson_name" required placeholder="Lesson name" 
+                    <input className="name__field" type="text" id="lesson_name" required autoFocus placeholder="Lesson name" 
                     value={lesson.lesson_name} onChange={handleControlledInputChange} />
                 </fieldset>
                 <fieldset className="inputs__link">
@@ -104,10 +112,12 @@ export const LessonForum = () => {
                     <input className="desription__field" type="text" id="description" required placeholder="This is the lesson description"
                     value={lesson.description} onChange={handleControlledInputChange} />
                 </fieldset>
-                <button onClick={handleClickSaveLesson}>Save Lesson</button>
+                <button className="button" onClick={handleClickSaveLesson}>Save Lesson</button>
             </section>
         </form>
-        <button onClick={handleClickDeleteLesson}>Delete Lesson</button>
+        <div style={{textAlign: "center"}}>
+            {handleIfDelete()}
+        </div>
         </>
     )
 }

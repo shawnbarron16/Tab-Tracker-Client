@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { RoutineContext } from "./RoutinesProvider"
+import "../../index.css"
 
 export const RoutineForum = () => {
     const { routines, getRoutineById, addRoutine, updateRoutine, deleteRoutine } = useContext(RoutineContext);
@@ -19,6 +20,14 @@ export const RoutineForum = () => {
           )
         }
       }
+
+    const handleIfDelete = () => {
+        if(routineId) {
+            return(
+                <button className="button" onClick={handleCLickDeleteRoutine}>Delete Routine</button>
+            )
+        }
+    }
 
 
     const [routine, setRoutine] = useState({
@@ -53,13 +62,13 @@ export const RoutineForum = () => {
                     routine_name: newRoutine_Name,
                     description: newRoutine_description,
                 };
-                updateRoutine(newRoutine).then(() => history.push("/routines/" + parseInt(newRoutine.id)));
+                updateRoutine(newRoutine).then(() => history.push("/routines/" + parseInt(routineId)));
             } else {
                 const newRoutine = {
                     routine_name: newRoutine_Name,
                     description: newRoutine_description,
                 };
-                addRoutine(newRoutine).then(() => history.push("/routines/" + parseInt(newRoutine.id)));
+                addRoutine(newRoutine).then(() => history.push("/routines/"));
             }
         }
     };
@@ -73,12 +82,12 @@ export const RoutineForum = () => {
     return (
         <>
         <form className="routine-forum">
-            <section className="routine-forum__title">
+            <section style={{textAlign: "center", marginTop: "20px", marginBottom: "50px"}} className="routine-forum__title">
                 {handleTitle()}
             </section>
             <section className="routine-forum__inputs">
                 <fieldset className="inputs__name">
-                    <label className="name__field">
+                    <label style={{textAlign: "center"}} className="name__field">
                         Give the routine a name
                     </label>
                     <input className="name__field" type="text" id="routine_name" required placeholder="routine name" 
@@ -91,10 +100,12 @@ export const RoutineForum = () => {
                     <input className="desription__field" type="text" id="description" required placeholder="This is the routine description"
                     value={routine.description} onChange={handleControlledInputChange} />
                 </fieldset>
-                <button onClick={handleClickSaveRoutine}>Save Routine</button>
+                <button className="button" onClick={handleClickSaveRoutine}>Save Routine</button>
             </section>
         </form>
-        <button onClick={handleCLickDeleteRoutine}>Delete Routine</button>
+        <div>
+            {handleIfDelete()}
+        </div>
         </>
     )
 }
