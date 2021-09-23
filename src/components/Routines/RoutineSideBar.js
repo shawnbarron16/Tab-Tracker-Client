@@ -14,7 +14,11 @@ export const RoutineSideBar = () => {
 
   return (
     <>
-      <div className="sidebar">
+      <div className="sidebar" style={{marginLeft: "15px"}}>
+        <h1 style={{fontSize: 50, marginBottom: "20px", textDecoration: "underline"}}>Your Routines</h1>
+        <button className="button" onClick={() => history.push("/AddARoutine")}>
+          Add A Routine
+        </button>
         <div className="sidebar__routines">
           {routines.map((routine) => {
             return (
@@ -25,12 +29,6 @@ export const RoutineSideBar = () => {
               </ul>
             );
           })}
-          <button
-            className="button"
-            onClick={() => history.push("/AddARoutine")}
-          >
-            Add A Routine
-          </button>
         </div>
       </div>
     </>
