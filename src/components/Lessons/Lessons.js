@@ -28,7 +28,7 @@ export const Lessons = () => {
           <div className="single-lesson__info" style={{marginBottom: "50px"}}>{lesson.lesson_name}</div>
           <div className="single-lesson__info">
             <a href={lesson.link} target="_blank" rel="noreferrer" style={{marginBottom: "50px"}}>
-              View Lesson
+              Click Here To View Lesson
             </a>
           </div>
           <div className="single-lesson__info" style={{marginTop: "50px", marginBottom: "25px"}}>{lesson.description}</div>

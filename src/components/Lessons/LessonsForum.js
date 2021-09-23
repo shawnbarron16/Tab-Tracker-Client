@@ -65,7 +65,7 @@ export const LessonForum = () => {
                     link: newLessonLink,
                     description: newLessonDescription,
                 };
-                updateLesson(newLesson).then(() => hisory.push("/lessons/" + parseInt(newLesson.id)));
+                updateLesson(newLesson).then(() => hisory.push("/lessons/" + parseInt(lessonId)));
             } else {
                 const newLesson = {
                     id: parseInt(lessonId),
@@ -73,7 +73,7 @@ export const LessonForum = () => {
                     link: newLessonLink,
                     description: newLessonDescription,
                 };
-                addLesson(newLesson).then(() => hisory.push("/lessons/" + newLesson.id));
+                addLesson(newLesson).then(() => hisory.push("/lessons/"));
             }
         }
     };
