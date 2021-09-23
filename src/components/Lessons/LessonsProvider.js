@@ -7,7 +7,7 @@ export const LessonProvider = (props) => {
     const [lesson, setLesson] = useState([])
 
     const getLessons = () => {
-        return fetch("http://localhost:8000/lessons", {
+        return fetch("https://smb-tab-tracker.herokuapp.com/lessons", {
             headers:{
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`
             }
@@ -16,7 +16,7 @@ export const LessonProvider = (props) => {
     } 
 
     const addLesson =  lessonObj => {
-        return fetch("http://localhost:8000/lessons", {
+        return fetch("https://smb-tab-tracker.herokuapp.com/lessons", {
             method: "POST",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`,
@@ -28,7 +28,7 @@ export const LessonProvider = (props) => {
     }
 
     const deleteLesson = lessonId => {
-        return fetch (`http://localhost:8000/lessons/${lessonId}`, {
+        return fetch (`https://smb-tab-tracker.herokuapp.com/lessons/${lessonId}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`
@@ -39,7 +39,7 @@ export const LessonProvider = (props) => {
     }
 
     const getLessonById = lessonId => {
-        return fetch(`http://localhost:8000/lessons/${lessonId}`, {
+        return fetch(`https://smb-tab-tracker.herokuapp.com/lessons/${lessonId}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`
             }
@@ -48,7 +48,7 @@ export const LessonProvider = (props) => {
     }
 
     const updateLesson = lesson => {
-        return fetch(`http://localhost:8000/lessons/${lesson.id}`, {
+        return fetch(`https://smb-tab-tracker.herokuapp.com/lessons/${lesson.id}`, {
             method: "PUT",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`,

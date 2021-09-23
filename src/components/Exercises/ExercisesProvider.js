@@ -6,7 +6,7 @@ export const ExerciseProvider = (props) => {
     const [exercises, setExercises] = useState([])
 
     const getExercises = routineId => {
-        return fetch(`http://localhost:8000/exercises?routine=${routineId}`, {
+        return fetch(`https://smb-tab-tracker.herokuapp.com/exercises?routine=${routineId}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`
             }
@@ -15,7 +15,7 @@ export const ExerciseProvider = (props) => {
     }
 
     const addExercise = (exerciseObj, routineId) => {
-        return fetch(`http://localhost:8000/exercises?routine=${routineId}`,{
+        return fetch(`https://smb-tab-tracker.herokuapp.com/exercises?routine=${routineId}`,{
             method: "POST",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`,
@@ -27,7 +27,7 @@ export const ExerciseProvider = (props) => {
     }
 
     const deleteExercise = (exerciseId, routineId) => {
-        return fetch (`http://localhost:8000/exercises/${exerciseId}`, {
+        return fetch (`https://smb-tab-tracker.herokuapp.com/exercises/${exerciseId}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`
@@ -37,7 +37,7 @@ export const ExerciseProvider = (props) => {
     }
 
     const updateExercise = (exerciseObj, routineId) => {
-        return fetch(`http://localhost:8000/exercises/${exerciseObj.id}?routine=${routineId}`, {
+        return fetch(`https://smb-tab-tracker.herokuapp.com/exercises/${exerciseObj.id}?routine=${routineId}`, {
             method: "PUT",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`,
@@ -49,7 +49,7 @@ export const ExerciseProvider = (props) => {
     }
 
     const getExerciseById = (exerciseId) => {
-        return fetch(`http://localhost:8000/exercises/${exerciseId}`, {
+        return fetch(`https://smb-tab-tracker.herokuapp.com/exercises/${exerciseId}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`
             }

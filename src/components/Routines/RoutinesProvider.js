@@ -6,7 +6,7 @@ export const RoutineProvider = (props) => {
     const [routines, setRoutine] = useState([])
 
     const getRoutines = () => {
-        return fetch("http://localhost:8000/routines", {
+        return fetch("https://smb-tab-tracker.herokuapp.com/routines", {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`
             }
@@ -16,7 +16,7 @@ export const RoutineProvider = (props) => {
     }
 
     const addRoutine = routineObj => {
-        return fetch("http://localhost:8000/routines", {
+        return fetch("https://smb-tab-tracker.herokuapp.com/routines", {
             method: "POST",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`,
@@ -28,7 +28,7 @@ export const RoutineProvider = (props) => {
     }
 
     const deleteRoutine = routineId => {
-        return fetch(`http://localhost:8000/routines/${routineId}`, {
+        return fetch(`https://smb-tab-tracker.herokuapp.com/routines/${routineId}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`
@@ -38,7 +38,7 @@ export const RoutineProvider = (props) => {
     }
 
     const getRoutineById = routineId => {
-        return fetch(`http://localhost:8000/routines/${routineId}`, {
+        return fetch(`https://smb-tab-tracker.herokuapp.com/routines/${routineId}`, {
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`
             }
@@ -47,7 +47,7 @@ export const RoutineProvider = (props) => {
     }
 
     const updateRoutine = routineObj => {
-        return fetch(`http://localhost:8000/routines/${routineObj.id}`,{
+        return fetch(`https://smb-tab-tracker.herokuapp.com/routines/${routineObj.id}`,{
             method: "PUT",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("tt_token")}`,
