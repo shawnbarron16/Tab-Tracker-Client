@@ -103,7 +103,7 @@ export const RoutineForum = () => {
                 <button className="button" onClick={handleClickSaveRoutine}>Save Routine</button>
             </section>
         </form>
-        <div>
+        <div style={{textAlign: "center"}}>
             {handleIfDelete()}
         </div>
         </>
