@@ -15,7 +15,6 @@ import { RoutineSideBar } from "./Routines/RoutineSideBar";
 import { HomeScreen } from "./HomeScreen";
 
 export const ApplicationViews = () => {
-  const history = useHistory();
 
   return (
     <>
