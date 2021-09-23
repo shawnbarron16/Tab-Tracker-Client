@@ -16,6 +16,18 @@ export const Lessons = () => {
     getLessonById(lessonId).then((data) => setLesson(data));
   }, [lessonId]);
 
+  const handleIfYoutube = () => {
+    if(lesson.link) {
+    if(lesson.link.includes("youtu")) {
+      const linkId = lesson.link.split(".be")[1]
+      const newLessonLink = `https://www.youtube.com/embed${linkId}`
+      return (
+      <iframe width="560" height="315" src={newLessonLink} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+      )
+    } 
+  }
+  }
+
   return (
     <>
     <div className="columns">
@@ -27,6 +39,9 @@ export const Lessons = () => {
         <article className="single-lesson">
           <div className="single-lesson__info" style={{marginBottom: "50px"}}>{lesson.lesson_name}</div>
           <div className="single-lesson__info">
+          <div>
+            {handleIfYoutube()}
+          </div>
             <a href={lesson.link} target="_blank" rel="noreferrer" style={{marginBottom: "50px"}}>
               Click Here To View Lesson
             </a>
