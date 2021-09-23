@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { RoutineContext } from "./RoutinesProvider"
+import "../../index.css"
 
 export const RoutineForum = () => {
     const { routines, getRoutineById, addRoutine, updateRoutine, deleteRoutine } = useContext(RoutineContext);
@@ -61,13 +62,13 @@ export const RoutineForum = () => {
                     routine_name: newRoutine_Name,
                     description: newRoutine_description,
                 };
-                updateRoutine(newRoutine).then(() => history.push("/routines/" + parseInt(newRoutine.id)));
+                updateRoutine(newRoutine).then(() => history.push("/routines/" + parseInt(routineId)));
             } else {
                 const newRoutine = {
                     routine_name: newRoutine_Name,
                     description: newRoutine_description,
                 };
-                addRoutine(newRoutine).then(() => history.push("/routines/" + parseInt(newRoutine.id)));
+                addRoutine(newRoutine).then(() => history.push("/routines/"));
             }
         }
     };

@@ -89,7 +89,7 @@ export const ExerciseForum = () => {
                 <button className="button" onClick={handleClickSaveExercise}>Save Exercise</button>
             </section>
         </form>
-        <section>
+        <section style={{textAlign: "center"}}>
             {handleIfDelete()}
         </section>
         </>

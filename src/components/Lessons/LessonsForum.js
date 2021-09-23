@@ -86,7 +86,7 @@ export const LessonForum = () => {
 
     return (
         <>
-        <form className="lesson-forum">
+        <form className="lesson-forum" style={{textAlign: "center"}}>
             <section style={{textAlign: "center", marginTop: "20px", marginBottom: "50px"}} className="lesson-forum__title">
                 {handleTitle()}
             </section>
@@ -115,7 +115,7 @@ export const LessonForum = () => {
                 <button className="button" onClick={handleClickSaveLesson}>Save Lesson</button>
             </section>
         </form>
-        <div>
+        <div style={{textAlign: "center"}}>
             {handleIfDelete()}
         </div>
         </>
