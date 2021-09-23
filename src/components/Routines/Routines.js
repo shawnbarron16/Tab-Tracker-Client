@@ -21,7 +21,6 @@ export const Routines = () => {
   return (
     <>
       <div className="columns">
-        {" "}
         <div className="column is-one-fifth">
           <article>{RoutineSideBar()}</article>
         </div>

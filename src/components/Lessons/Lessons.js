@@ -18,15 +18,20 @@ export const Lessons = () => {
 
   return (
     <>
-      <section className="lesson-viewer">
+    <div className="columns">
+      <div className="column is-one-fifth">
+      <article>{LessonSideBar()}</article>
+      </div>
+      <div className="column">
+      <section className="lesson-viewer" style={{ marginLeft: "400px" }}>
         <article className="single-lesson">
-          <div className="single-lesson__info">{lesson.lesson_name}</div>
+          <div className="single-lesson__info" style={{marginBottom: "50px"}}>{lesson.lesson_name}</div>
           <div className="single-lesson__info">
-            <a href={lesson.link} target="_blank" rel="noreferrer">
+            <a href={lesson.link} target="_blank" rel="noreferrer" style={{marginBottom: "50px"}}>
               View Lesson
             </a>
           </div>
-          <div className="single-lesson__info">{lesson.description}</div>
+          <div className="single-lesson__info" style={{marginTop: "50px", marginBottom: "25px"}}>{lesson.description}</div>
           <div className="single-lesson__info">
             <button className="button" onClick={() => history.push(`EditLesson/${lessonId}`)}>
               Edit/Delete Lesson
@@ -34,7 +39,8 @@ export const Lessons = () => {
           </div>
         </article>
       </section>
-      <article><LessonSideBar /></article>
+      </div>
+      </div>
     </>
   );
 };
