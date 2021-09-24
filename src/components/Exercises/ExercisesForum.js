@@ -81,7 +81,7 @@ export const ExerciseForum = () => {
             <section className="routine-forum__inputs">
                 <fieldset className="inputs__description">
                     <label className="description__field">
-                        Add a description for the routine
+                        Add a description for the exercise
                     </label>
                     <input className="desription__field" type="text" id="description" required placeholder="This is the routine description"
                     value={exercise.description} onChange={handleControlledInputChange} style={{border: "1px solid", borderRadius: "7px", boxShadow: "0 0 5px ", width: "200px"}}/>
